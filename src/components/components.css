@@ -1,0 +1,32 @@
+.lang {
+width: 80px !important;
+margin: auto;
+}
+
+form > select:defined {
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.8rem;
+    
+    
+}
+
+option {
+    
+    font-size: 0.8rem;
+}
+
+label.city{
+    color: black;
+    margin-top: -10px;
+
+}
+
+.perso {
+    width: 200px;
+    margin: auto;
+}
+
+
+
+

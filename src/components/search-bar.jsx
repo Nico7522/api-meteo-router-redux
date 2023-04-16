@@ -13,10 +13,16 @@ export default function SearchBar () {
     }
 
     return (
+        
         <form onSubmit={handleSearch} >
-            <label htmlFor="search">Enter a city</label>
-            <input value={city} onChange={(e) => setCity(e.target.value)} type="text" id="search" />
+            <div className="form-floating  mb-2 perso">
+            <input className="form-control" value={city} onChange={(e) => setCity(e.target.value)} type="text" id="search" />
+            <label className="city" htmlFor="search" placeholder="">Enter a city</label>
+
+            </div>
             <button className="btn btn-primary">Search</button>
         </form>
+
+
     )
 }

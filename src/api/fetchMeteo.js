@@ -1,15 +1,17 @@
 import axios from "axios";
+import { useSelector } from "react-redux";
 const API_KEY = "72b1830e6bd1df9d301781d068217f37";
 const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather`;
 const WEATHER_URL_FORECAST = `https://api.openweathermap.org/data/2.5/forecast`;
-// const dispatch = useDispatch()
 
-export const fetchMeteoToday = (city) => {
+
+
+export const fetchMeteoToday = (city, lang) => {
   return axios
     .get(WEATHER_URL, {
       params: {
         q: city,
-        lang: "fr",
+        lang: lang,
         appid: API_KEY,
         units: "metric",
       },
@@ -23,12 +25,12 @@ export const fetchMeteoToday = (city) => {
     }));
 };
 
-export const fetchMeteoForecast = (city) => {
+export const fetchMeteoForecast = (city, lang) => {
   return axios
     .get(WEATHER_URL_FORECAST, {
       params: {
         q: city,
-        lang: "fr",
+        lang: lang,
         appid: API_KEY,
         units: "metric",
       },

@@ -1,17 +1,18 @@
 import { useEffect } from "react";
 import { useState } from "react"
 import { fetchMeteoForecast, fetchMeteoToday } from "../api/fetchMeteo";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ForecastFetchMeteoAction, TodayFetchMeteoAction } from "../store/actions/meteo.action";
 
 
 export const useFetchTodayMeteo = (city) => {
+    const lang = useSelector(state => state.language.language)
     const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetchMeteoToday(city)
+        fetchMeteoToday(city, lang)
         .then((data) => {
             dispatch(TodayFetchMeteoAction(data))
         })
@@ -25,7 +26,7 @@ export const useFetchTodayMeteo = (city) => {
             setError(false)
         }
 
-    }, [city])
+    }, [city, lang])
     
     return [isLoading, error]
 };
