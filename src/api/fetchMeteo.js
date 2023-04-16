@@ -34,6 +34,7 @@ export const fetchMeteoForecast = (city) => {
       },
     })
     .then(({ data }) => {
+      console.log(data);
       return {
         name: data.city.name,
         forecast: data.list.map((t) => ({

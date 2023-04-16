@@ -33,12 +33,12 @@ const TodayMeteo = () => {
     </div> */}
   </div>
 
-  <div class="card-header">
+  <div className="card-header">
     <span>City : {data.name}<br /></span>
     {/* <span>March 13</span> */}
   </div>
 
-  <span class="temp">Temperature {data.temp}°C  <br /> Feeling {data.feeling}°C</span>
+  <span className="temp">Temperature {data.temp}°C  <br /> Feeling {data.feeling}°C</span>
   
   
 

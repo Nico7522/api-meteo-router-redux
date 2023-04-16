@@ -1,7 +1,10 @@
 .App {
-  width: 500px;
+  width: 100%;
   height: auto;
-  margin: auto;
+  margin: 100px auto;
   text-align: center;
-  border: solid black 5px;
+  background-color: #242424;
+  color: aliceblue;
+
+  /* border: solid black 5px; */
 }
