@@ -30,6 +30,7 @@ const TodayMeteo = () => {
             Temperature {data.temp}°C <br /> Feeling {data.feeling}°C <br />{" "}
             {data.description}
           </span>
+          
         </div>
       )}
     </>
