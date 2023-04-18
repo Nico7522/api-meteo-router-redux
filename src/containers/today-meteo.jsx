@@ -3,32 +3,33 @@ import { useFetchTodayMeteo } from "../hooks/meteo-today.hooks";
 import "./meteo.css";
 const TodayMeteo = () => {
   let search = useSelector((state) => state.search.search);
-  const [isLoading, error] = useFetchTodayMeteo(search);
-  let data = useSelector((state) => state.meteo.TodayMeteo[0]);
-
+  // const [isLoading, error] = useFetchTodayMeteo(search);
+  const {loadind, todayMeteoData, errors} = useSelector(state => state.weather)
+  // let data = useSelector((state) => state.meteo.TodayMeteo[0]);
+ 
   return (
     <>
-      {data && (
+      {todayMeteoData && (
         <div className="card">
           <div className="container">
             <img
               className="img"
-              src={"https://openweathermap.org/img/wn/" + data.img + ".png"}
+              src={"https://openweathermap.org/img/wn/" + todayMeteoData.img + ".png"}
               alt=""
             />
           </div>
 
           <div className="card-header">
             <span>
-              City : {data.name}
+              City : {todayMeteoData.name}
               <br />
             </span>
             {/* <span>March 13</span> */}
           </div>
 
           <span className="temp">
-            Temperature {data.temp}°C <br /> Feeling {data.feeling}°C <br />{" "}
-            {data.description}
+            Temperature {todayMeteoData.temp}°C <br /> Feeling {todayMeteoData.feeling}°C <br />{" "}
+            {todayMeteoData.description}
           </span>
           
         </div>

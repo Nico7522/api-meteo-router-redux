@@ -1,13 +1,18 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { searchAction } from "../store/actions/search.action";
 import { useState } from "react";
 import './components.css'
+import { FetchForecastWeatherAction, FetchTodayWeatherAction } from "../store/actions/meteo.action";
 export default function SearchBar() {
   const dispatch = useDispatch();
-  const [city, setCity] = useState("");
+  const [nameCity, setCity] = useState("");
+  const lang = useSelector(state => state.language.language)
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(searchAction(city));
+    const data = {nameCity, lang}
+    dispatch(searchAction(nameCity));
+    dispatch(FetchTodayWeatherAction(data))
+    dispatch(FetchForecastWeatherAction(city))
     setCity("");
   };
 
@@ -19,10 +24,10 @@ export default function SearchBar() {
           className="form-control"
           id="floatingInput"
           placeholder="City"
-          value={city}
+          value={nameCity}
           onChange={(e) => setCity(e.target.value)}
         />
-        <label for="floatingInput" >
+        <label htmlFor="floatingInput" >
           City
         </label>
       </div>

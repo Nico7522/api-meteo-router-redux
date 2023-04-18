@@ -1,0 +1,16 @@
+{
+  "weather": [
+    {
+      "id": 1,
+      "temp": 9.5
+    },
+    {
+      "name": "Mons",
+      "temp": 13.03,
+      "feeling": 12.24,
+      "description": "nuageux",
+      "img": "04d",
+      "id": 2
+    }
+  ]
+}
