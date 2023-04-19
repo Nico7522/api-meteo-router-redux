@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
+import ButtonRefresh from "../components/refresh";
 import { useFetchTodayMeteo } from "../hooks/meteo-today.hooks";
+import { RefreshAction } from "../store/actions/refresh.action";
 import "./meteo.css";
 const TodayMeteo = () => {
   let search = useSelector((state) => state.search.search);
@@ -31,7 +33,6 @@ const TodayMeteo = () => {
             Temperature {todayMeteoData.temp}°C <br /> Feeling {todayMeteoData.feeling}°C <br />{" "}
             {todayMeteoData.description}
           </span>
-          
         </div>
       )}
     </>

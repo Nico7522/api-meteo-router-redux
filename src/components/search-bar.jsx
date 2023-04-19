@@ -3,16 +3,13 @@ import { searchAction } from "../store/actions/search.action";
 import { useState } from "react";
 import './components.css'
 import { FetchForecastWeatherAction, FetchTodayWeatherAction } from "../store/actions/meteo.action";
+import { refreshCity } from "../store/actions/refreshCity.action";
 export default function SearchBar() {
   const dispatch = useDispatch();
   const [nameCity, setCity] = useState("");
-  const lang = useSelector(state => state.language.language)
   const handleSearch = (e) => {
     e.preventDefault();
-    const data = {nameCity, lang}
-    dispatch(searchAction(nameCity));
-    dispatch(FetchTodayWeatherAction(data))
-    dispatch(FetchForecastWeatherAction(city))
+    dispatch(refreshCity(nameCity))
     setCity("");
   };
 
