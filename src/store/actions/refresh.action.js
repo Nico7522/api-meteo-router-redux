@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { FetchTodayWeatherAction } from "./meteo.action";
+import { FetchForecastWeatherAction, FetchTodayWeatherAction } from "./meteo.action";
 
 export const RefreshAction = createAsyncThunk(
     'refresh/weater',
@@ -12,5 +12,6 @@ export const RefreshAction = createAsyncThunk(
         
         
         thunkAPI.dispatch(FetchTodayWeatherAction(dataS))
+        thunkAPI.dispatch(FetchForecastWeatherAction(dataS))
         
     },)

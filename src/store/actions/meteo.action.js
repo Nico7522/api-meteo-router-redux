@@ -32,7 +32,7 @@ export const FetchTodayWeatherAction = createAsyncThunk(
 export const FetchForecastWeatherAction = createAsyncThunk(
     'weather/fetch-forecast',
     async (data) => {
-        return await fetchMeteoForecast(data)
+        return await fetchMeteoForecast(data.nameCity, data.lang)
     }
 )
 

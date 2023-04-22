@@ -4,7 +4,7 @@ import { useFetchTodayMeteo } from "../hooks/meteo-today.hooks";
 import { RefreshAction } from "../store/actions/refresh.action";
 import "./meteo.css";
 const TodayMeteo = () => {
-  let search = useSelector((state) => state.search.search);
+  // let search = useSelector((state) => state.search.search);
   // const [isLoading, error] = useFetchTodayMeteo(search);
   const {loadind, todayMeteoData, errors} = useSelector(state => state.weather)
   // let data = useSelector((state) => state.meteo.TodayMeteo[0]);
